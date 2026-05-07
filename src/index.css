@@ -1,0 +1,66 @@
+/* ─── 1. Tailwind core ───────────────────────────────────────────────── */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ─── Dark mode strategy (replaces `darkMode: "class"`) ─────────────── */
+/* Applies dark variant when an ancestor has class="dark" */
+@variant dark (&:where(.dark, .dark *));
+
+/* ─── 2. Design tokens ───────────────────────────────────────────────── */
+@theme {
+  /* Color palette */
+  --color-surface: oklch(1.00 0.00 0);
+
+  /* Typography */
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --font-display: "Poppins", sans-serif;
+}
+
+/* ─── 3. Base layer ──────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-display);
+    background-color: var(--color-surface);
+    color: oklch(0.14 0 0);
+    min-height: 100dvh;
+  }
+
+  .dark body {
+    background-color: oklch(0.12 0.00 0);
+    color: oklch(0.94 0.00 0);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+/* ─── 4. Component abstractions ──────────────────────────────────────── */
+@layer components {
+}
+
+/* ─── 5. Custom utilities ─────────────────────────────────────────────── */
+@layer utilities {
+}
+
+/* ─── Keyframes ───────────────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
