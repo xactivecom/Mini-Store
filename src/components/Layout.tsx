@@ -1,13 +1,18 @@
-import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 
 function Layout() {
+  const location = useLocation();
+
   return (
     <>
       <Header />
       <main>
-        <Outlet />
+        <Suspense key={location.pathname} fallback={<p>Loading...</p>}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
     </>

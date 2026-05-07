@@ -1,9 +1,11 @@
 import NavMenuLink from '@/ui/NavMenuLink';
 
+import { resolveImage } from '../hooks/useImageMap';
+
 function Header() {
   return (
     <header className="flex justify-between px-5 py-4 bg-blue-100 shadow-md">
-      <img className="h-6" src="/logo.svg" alt="logo" />
+      <img className="h-6" src={resolveImage("logo.svg")} alt="logo" />
 
       <nav>
         <ul className="flex gap-14">

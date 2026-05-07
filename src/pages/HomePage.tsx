@@ -1,5 +1,7 @@
 import { Link, useLoaderData } from 'react-router-dom';
-import { type Category } from '../types/Category'
+
+import { type Category } from '../types/Category';
+import { resolveImage } from '../hooks/useImageMap';
 
 function HomePage() {
   // Load data
@@ -20,7 +22,7 @@ function HomePage() {
               <span className="absolute z-10 text-xl font-semibold text-white transition ease-out group-hover:text-2xl ">
                 {category.name}
               </span>
-              <img className="rounded-md" src={category.img} alt={category.name} />
+              <img className="rounded-md" src={resolveImage(category.img)} alt={category.name} />
               <div className="absolute inset-0 bg-gray-900 rounded-md opacity-40"></div>
             </Link>
           </li>

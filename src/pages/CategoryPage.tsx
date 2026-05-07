@@ -1,5 +1,7 @@
 import { Link, useLoaderData, useParams, useSearchParams } from 'react-router-dom';
-import type { Product, ProductsRouteState } from '../types/Product'
+
+import type { Product, ProductsRouteState } from '../types/Product';
+import { resolveImage } from '../hooks/useImageMap';
 
 function CategoryPage() {
   // Get specified parameter
@@ -55,7 +57,7 @@ function CategoryPage() {
                 {product.name} <br /> {product.price}$
               </span>
 
-              <img className="rounded-md" src={product.img} alt={product.name} />
+              <img className="rounded-md" src={resolveImage(product.img)} alt={product.name} />
               <div className="absolute inset-0 bg-gray-900 rounded-md opacity-40"></div>
             </Link>
           </li>

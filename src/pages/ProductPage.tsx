@@ -1,5 +1,7 @@
 import { useLocation, useParams } from 'react-router-dom';
-import { type Product, isProductsRouteState } from '../types/Product'
+
+import { type Product, isProductsRouteState } from '../types/Product';
+import { resolveImage } from '../hooks/useImageMap';
 
 function ProductPage() {
   // Get specified parameter
@@ -34,7 +36,7 @@ function ProductPage() {
             <div className="flex flex-col items-center p-6 bg-white rounded-md">
               <h2 className="mb-2 text-xl font-semibold">{product.name}</h2>
               <p className="text-lg text-gray-700">Price: {product.price}$</p>
-              <img className="w-40 h-40 mb-4 rounded-md" src={product.img} alt={product.name} />
+              <img className="w-40 h-40 mb-4 rounded-md" src={resolveImage(product.img)} alt={product.name} />
             </div>
           </>
         ) : (
