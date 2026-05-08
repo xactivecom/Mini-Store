@@ -1,11 +1,9 @@
-# React + TypeScript + Vite
+# Mini Store Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application was based on the Udemy course: "Big React JS Course With AI" by Dmitrii Fokeev.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The project has been modified to use React + TypeScript + Vite with upgraded libraries.
+Changes were made to data loading and resolution of application image files.
 
 ## React Compiler
 

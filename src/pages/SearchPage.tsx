@@ -4,7 +4,6 @@ function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const searchQuery = searchParams.get('q') || '';
-  console.log(searchQuery);
 
   function updateSearch(newSearchQuery: string) {
     setSearchParams(newSearchQuery ? { q: newSearchQuery } : {});

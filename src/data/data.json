@@ -89,14 +89,14 @@
       "categoryId": "Books",
       "name": "Comic Book",
       "price": 12,
-      "img": "comicBook.png"
+      "img": "comicbook.png"
     },
     {
       "id": 13,
       "categoryId": "Furniture",
       "name": "Desk Chair",
       "price": 200,
-      "img": "deskChair.png"
+      "img": "deskchair.png"
     },
     {
       "id": 14,
@@ -138,7 +138,7 @@
       "categoryId": "Outdoor",
       "name": "Roller Skates",
       "price": 150,
-      "img": "rollerSkates.png"
+      "img": "rollerskates.png"
     },
     {
       "id": 20,

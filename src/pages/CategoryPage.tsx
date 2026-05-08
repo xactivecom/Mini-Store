@@ -13,7 +13,6 @@ function CategoryPage() {
 
   // Get max price
   const maxPrice = searchParams.get('maxPrice') ? Number(searchParams.get('maxPrice')) : Infinity;
-  console.log(`maxPrice ${maxPrice}`)
   
   // Get products in specified category
   let filteredProducts = products.filter((p) => p.categoryId === categoryId && p.price <= maxPrice);
@@ -54,7 +53,7 @@ function CategoryPage() {
             >
               <span className="absolute z-10 text-xl font-semibold text-center text-white transition-all ease-out group-hover:text-2xl">
                 {" "}
-                {product.name} <br /> {product.price}$
+                {product.name} <br /> ${product.price}
               </span>
 
               <img className="rounded-md" src={resolveImage(product.img)} alt={product.name} />

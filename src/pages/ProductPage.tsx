@@ -6,7 +6,6 @@ import { resolveImage } from '../hooks/useImageMap';
 function ProductPage() {
   // Get specified parameter
   const { productId } = useParams();
-  console.log(`productId: ${productId}`)
 
   // Get current route
   const { state } = useLocation();
@@ -25,7 +24,6 @@ function ProductPage() {
 
   // Get specific product
   const product = products.find((p: Product) => p.id == parseInt(productId, 10));
-  console.log(product);
 
   return (
     <div className="px-6 py-10">
@@ -35,7 +33,7 @@ function ProductPage() {
             <h1 className="mb-6 text-3xl font-semibold text-center">Product Details</h1>
             <div className="flex flex-col items-center p-6 bg-white rounded-md">
               <h2 className="mb-2 text-xl font-semibold">{product.name}</h2>
-              <p className="text-lg text-gray-700">Price: {product.price}$</p>
+              <p className="text-lg text-gray-700">Price: ${product.price}</p>
               <img className="w-40 h-40 mb-4 rounded-md" src={resolveImage(product.img)} alt={product.name} />
             </div>
           </>
