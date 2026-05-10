@@ -8,8 +8,8 @@ function HomePage() {
   const categories = useLoaderData<Category[]>();
 
   return (
-    <div className="py-10 sm:py-16 md:py-20">
-      <h1 className="mb-8 text-2xl font-semibold text-center text-slate-600">Categories</h1>
+    <div className="py-4 sm:py-6 md:py-8">
+      <h1 className="mb-4 text-2xl font-semibold text-center text-slate-600">Categories</h1>
 
       <ul className="grid grid-cols-3 gap-4 px-5">
         {

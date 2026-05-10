@@ -7,7 +7,7 @@ function Footer() {
         {/* Customer Support */}
         <div>
           <h3 className="mb-3 text-sm font-bold">
-            Customer <br /> Support
+            Customer Support
           </h3>
           <ul className="space-y-1">
             <li>

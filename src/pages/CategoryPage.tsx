@@ -28,8 +28,9 @@ function CategoryPage() {
   }
 
   return (
-    <div className="px-6 py-10">
-      <h1 className="mb-6 text-3xl font-semibold text-center">Category: {categoryId}</h1>
+    <div className="px-6 py-4 sm:py-6 md:py-8">
+      <h1 className="mb-4 text-2xl font-semibold text-center text-slate-600">Category: {categoryId}</h1>
+
       <div className="mb-4">
         <label className="block mb-2 text-sm font-medium text-gray-700" htmlFor="maxPrice">Max Price{" "}</label>
         <input

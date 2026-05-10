@@ -32,11 +32,12 @@ function ProductPage() {
   const product = products.find((p: Product) => p.id == id);
 
   return (
-    <div className="px-6 py-10">
+    <div className="px-6 py-4 sm:py-6 md:py-8">
       {
         product ? (
           <>
-            <h1 className="mb-6 text-3xl font-semibold text-center">Product Details</h1>
+            <h1 className="mb-4 text-2xl font-semibold text-center text-slate-600">Product Details</h1>
+
             <div className="flex flex-col items-center p-6 bg-white rounded-md">
               <h2 className="mb-2 text-xl font-semibold">{product.name}</h2>
               <p className="text-lg text-gray-700">Price: ${product.price}</p>
@@ -45,14 +46,14 @@ function ProductPage() {
               <p className="text-lg text-gray-700">Quantity: {quantity}</p>
               <div className="flex gap-4">
                 <button
-                  className="bg-blue-500 text-white px-4 py-2 rounded"
+                  className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer"
                   onClick={() => incrementQuantity(id)}
                   aria-label="Increase quantity"
                 >
                   +1
                 </button>
                 <button
-                  className="bg-blue-500 text-white px-4 py-2 rounded"
+                  className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer"
                   onClick={() => decrementQuantity(id)}
                   disabled={quantity === 0}
                   aria-label="Decrease quantity"
