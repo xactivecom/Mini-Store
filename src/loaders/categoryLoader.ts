@@ -5,5 +5,15 @@ export default async function fetchCategoryLoader(): Promise<Category[]> {
   if (!res.ok) {
     throw new Error("Failed to fetch categories");
   }
-  return res.json();
+
+  // Explicit data conversion
+  const data = await res.json() as unknown[];
+  return data.map((item): Category => {
+    const p = item as Record<string, unknown>;
+    return {
+      id: String(p["id"]),
+      name: String(p["name"]),
+      img: String(p["img"]),
+    };
+  });
 }

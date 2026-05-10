@@ -5,5 +5,17 @@ export default async function fetchProductLoader(): Promise<Product[]> {
   if (!res.ok) {
     throw new Error("Failed to fetch products");
   }
-  return res.json();
+
+  // Explicit data conversion
+  const data = await res.json() as unknown[];
+  return data.map((item): Product => {
+    const p = item as Record<string, unknown>;
+    return {
+      id: Number(p["id"]),
+      categoryId: String(p["categoryId"]),
+      name: String(p["name"]),
+      price: Number(p["price"]),
+      img: String(p["img"]),
+    };
+  });
 }

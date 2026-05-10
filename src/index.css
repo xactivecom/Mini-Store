@@ -8,13 +8,14 @@
 
 /* ─── 2. Design tokens ───────────────────────────────────────────────── */
 @theme {
-  /* Color palette */
-  --color-surface: oklch(1.00 0.00 0);
-
-  /* Typography */
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
-  --font-display: "Poppins", sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --color-accent: #c4551a;
+  --color-ink: #1a1714;
+  --color-ink-muted: #6b6560;
+  --color-surface: #ffffff;
+  --color-bg: #f5f2ee;
+  --color-border: #e2dcd6;
 }
 
 /* ─── 3. Base layer ──────────────────────────────────────────────────── */
@@ -38,17 +39,6 @@
     color: oklch(0.14 0 0);
     min-height: 100dvh;
   }
-
-  .dark body {
-    background-color: oklch(0.12 0.00 0);
-    color: oklch(0.94 0.00 0);
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--color-brand-500);
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
 }
 
 /* ─── 4. Component abstractions ──────────────────────────────────────── */
@@ -60,7 +50,13 @@
 }
 
 /* ─── Keyframes ───────────────────────────────────────────────────────── */
-@keyframes fade-up {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+@keyframes pop {
+  0%   { transform: scale(0.5); }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
 }

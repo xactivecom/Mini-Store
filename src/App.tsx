@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Layout from './components/Layout';
 import NotFoundPage from './pages/NotFoundPage';
-import ThanksPage from './pages/ThanksPage';
 
 import fetchCategoryLoader from './loaders/categoryLoader';
 import fetchProductLoader from './loaders/productLoader';
@@ -29,26 +28,24 @@ const router = createBrowserRouter([
         errorElement: <ErrorBoundary /> 
       },
       {
-        path: 'about',
+        path: '/about',
         element: <AboutPage />
       },
       {
-        path: 'cart',
-        element: <CartPage />
+        path: '/cart',
+        element: <CartPage />,
+        loader: fetchProductLoader,
+        errorElement: <ErrorBoundary />
       },
       {
-        path: 'category/:categoryId',
+        path: '/category/:categoryId',
         element: <CategoryPage />,
         loader: fetchProductLoader,
         errorElement: <ErrorBoundary />
       },
       {
-        path: 'product/:productId',
+        path: '/product/:productId',
         element: <ProductPage />
-      },
-      {
-        path: 'thanks',
-        element: <ThanksPage />
       },
       {
         path: '*',
@@ -65,4 +62,3 @@ function App() {
 }
 
 export default App;
-

@@ -8,7 +8,7 @@ function CategoryPage() {
   const { categoryId } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // Load data
+  // Load product data
   const products = useLoaderData<Product[]>();
 
   // Get max price
